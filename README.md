@@ -10,7 +10,7 @@ Command line tool to download packages from xdcc on irc.
 
 <a href="www.sbcl.org">sbcl</a>
 
-optional but it is easiest way to get the other dependencies <a href="http://www.quicklisp.org">quicklisp</a>
+<a href="http://www.quicklisp.org">quicklisp</a>
 
 boardeaux-threads
 
@@ -54,13 +54,15 @@ lisbot irc.rizon.net my-xdcc-bot '#100' list '#4'
 
 lisbot --directory /home/dir/ irc.rizon.net my-bot '#100' 
 
-lisbot --create 21 3 2014 1 13 irc.rizon.net my-xdcc-bot name-of-chi nese-cartoo n
+lisbot --create 21 3 2014 1 13 irc.rizon.net my-xdcc-bot some search terms
 
 lisbot --file /home/user/my-generated-file
 
 lisbot --search [optional file] search terms
 
 lisbot --get server xdcc-bot
+
+lisbot -a t server xdcc-bot '#100' '#101'
 
 
 -h --help           prints this message
@@ -79,6 +81,7 @@ lisbot --get server xdcc-bot
 
 -g --get            Download packlist from xdcc bot to ~/.lisbot/packlist
 
+-a --all            If set, lisbot will download every package simultaneously   
 
 
 Creating schedule
@@ -88,3 +91,10 @@ Start with date in form day month year,
 first-episode-number, how-many-times, server, bot search-terms
 
 Will download everything where all search-terms match line in packlist.
+
+
+<h2>Issues</h2>
+
+
+Does not detect when you are put on queue.    
+When you try to download multiple packages the bots packlist might be updated and you will get wrong package.
